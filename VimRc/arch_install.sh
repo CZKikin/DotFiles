@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 #This is my script for installing arch linux, because I'm lazy 
 
