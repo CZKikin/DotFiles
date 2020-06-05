@@ -20,7 +20,7 @@ read swap
 [ $efi_supp -eq 1 ] && echo "enter efi partition" && read efi_partititon
 
 mkfs.ext4 $main || { echo "mkfs.ext4 failed" ; exit 1; }
-[ $efi_supp -eq 1 ] && mkfs.vfat $efi_partition || { echo "mkfs.vfat failed" ; exit 1; }
+[ $efi_supp -eq 1 ] && mkfs.vfat -F 32 $efi_partition || { echo "mkfs.vfat failed" ; exit 1; }
 mkswap $swap || { echo "makeswap failed" ; exit 1; }
 swapon $swap || { echo "swapon FAILED" ; exit 1; }
 
