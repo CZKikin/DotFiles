@@ -20,14 +20,14 @@ read swap
 [ $efi_supp -eq 1 ] && echo "enter efi partition" && read efi_partititon
 
 mkfs.ext4 $main
-[ $efi_supp -eq 1 ] && mkfs.vfat $efi_partition
+[ $efi_supp -eq 1 ] && mkfs.fat -F32 $efi_partition
 makeswap $swap
 swapon $swap
 
 mount $main /mnt
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
-mount $efi_partition /mnt/boot/efi
+[ $efi_supp -eq 1 ] && mount $efi_partition /mnt/boot/efi
 
 
 vim /etc/pacman.d/mirrorlist
