@@ -26,14 +26,14 @@ swapon $swap
 mount $main /mnt
 
 vim /etc/pacman.d/mirrorlist
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base base-devel linux linux-firmware vim sudo man-db man-pages dhcpcd inetutils
 
 gen fgstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
 arch-chroot /mnt hwclock --systohc
 arch-chroot /mnt locale-gen
-arch-chroot /mnt pacman -S vim sudo grub dhcpcd
+arch-chroot /mnt pacman -S grub
 
 echo "Enter hostname"
 read hostname
