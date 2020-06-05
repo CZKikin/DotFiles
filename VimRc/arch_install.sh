@@ -49,7 +49,7 @@ arch-chroot /mnt echo "127.0.0.1 localhost" >> /etc/hosts
 echo "Enter root passwd"
 arch-chroot /mnt passwd 
 
-[ $efi_supp -eq 1 ] && arch-chroot grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB || arch-chroot /mnt grub-install $grub_disk
+[ $efi_supp -eq 1 ] && arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB || arch-chroot /mnt grub-install $grub_disk
 
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
