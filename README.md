@@ -4,16 +4,19 @@
 - xorg-xixit
 - pavucontrol
 - pulseaduio
-- sudoers
+- sudo
 - networkmanager
-- lighdm-mini-greeter
 - unclutter
 - neomutt
 - compton
 - discord
-- mutt
-- nmapplet(nm-applet-gnome)
+- nmapplet
 - latex
+- git
+- vim
+- ranger
+- xrandr / arandr
+- feh
 
 Fonts: 
 Awesome, Minecraft
