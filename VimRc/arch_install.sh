@@ -35,7 +35,7 @@ arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
 arch-chroot /mnt hwclock --systohc
 arch-chroot /mnt vim /etc/locale.gen
 arch-chroot /mnt locale-gen
-arch-chroot /mnt pacman -S grub
+arch-chroot /mnt pacman -S grub efibootmgr
 
 echo "Enter hostname"
 read hostname
