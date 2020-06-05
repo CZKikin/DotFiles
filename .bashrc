@@ -138,6 +138,7 @@ alias doup='sudo apt clean; sudo apt update; sudo apt upgrade'
 alias mwin='sudo mount /dev/sda4 /media/kikin/windrive'
 alias smi='sudo make install'
 alias rr='ranger'
+alias ins='sudo apt install'
 alias ts='/media/kikin/windrive/Ubuntu_backup/home/kikin/Downloads/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh'
 
 #function aliases
@@ -146,44 +147,38 @@ sor(){
 	return
 }
 
-ins(){
-	sudo apt install $@
-	return
-}
 export -f sor
-export -f ins
 
-echo -e "----------------------------------------------------------------------------------------------\e[1;31mDistribution:\e[m"
-cat /etc/os-release  | grep "VERSION"
-echo -e "----------------------------------------------------------------------------------------------------\e[1;31mUptime:\e[m"
-uptime
-echo -e "--------------------------------------------------------------------------------------------\e[1;31mKernel version:\e[m"
-uname -mrs
-echo -e "----------------------------------------------------------------------------------------------logged users:"
+#echo -e "----------------------------------------------------------------------------------------------\e[1;31mDistribution:"
+#cat /etc/os-release  | grep "VERSION"
+#echo -e "----------------------------------------------------------------------------------------------------\e[1;31mUptime:\e[m"
+#uptime
+#echo -e "--------------------------------------------------------------------------------------------\e[1;31mKernel version:"
+#uname -mrs
+echo -e "----------------------------------------------------------------------------------------------\e[1;31mlogged users:"
 last | grep -i "still"
-echo -e "---------------------------------------------------------------------------------------Last terminal login:"
-lastlog | grep -v "Nikdy"
-echo -e "------------------------------------------------------------------------------------------Zombie processes:"
+#echo -e "---------------------------------------------------------------------------------------Last terminal login:"
+#lastlog | grep -v "Nikdy"
+echo -e "------------------------------------------------------------------------------------------\e[1;31mZombie processes:"
 ps axo pid,cmd,state | grep Z | grep -v grep
-echo -e "---------------------------------------------------------------------------------Last 3 sudo commands used:"
-cat /var/log/auth.log | grep -i "sudo" | grep -i tty | tail -n3 | cut -d ";" -f4
-echo -e "-------------------------------------------------------------------------------------------------------ARP:"
-arp -n | grep "\."
-echo -e "-------------------------------------------------------------------------------------------------------DNS:"
-nmcli | grep -i "server\|dns"
-echo -e "--------------------------------------------------------------------------------------------------------IP:"
-echo "Eth:"
-ifconfig enp1s0 | grep inet
-echo "Wlan:"
-ifconfig wlp2s0 | grep inet
-
-
+#echo -e "---------------------------------------------------------------------------------Last 3 sudo commands used:"
+#cat /var/log/auth.log | grep -i "sudo" | grep -i tty | tail -n3 | cut -d ";" -f4
+#echo -e "-------------------------------------------------------------------------------------------------------ARP:"
+#arp -n | grep "\."
+#echo -e "-------------------------------------------------------------------------------------------------------DNS:"
+#nmcli | grep -i "server\|dns"
+#echo -e "--------------------------------------------------------------------------------------------------------IP:"
+#echo "Eth:"
+#ifconfig enp1s0 | grep inet
+#echo "Wlan:"
+#ifconfig wlp2s0 | grep inet
 
 PS1="\[\e[1;31m\]["
 PS1+="\[\e[1;34m\]\u "
 PS1+="\[\e[m\]"
 #PS1+="\[\e[1;37m\] | "
 PS1+="\[\e[1;32m\]\w\[\e[1;31m\]]\[\e[m\]"
+PS1+="$(__git_ps1 " (%s)") \e[95m"
 export PS1
 echo -e '\n\n' 
 xset b off
