@@ -17,7 +17,7 @@ echo "enter main partition as /dev/sdax or /dev/nvmexxx..."
 read main
 echo "enter swap"
 read swap
-[ $efi_supp -eq 1 ] && echo "enter efi partition" && read efi_partititon
+[ $efi_supp -eq 1 ] && echo "enter efi partition" && read efi_partition
 
 ##DEBUGGING
 echo $efi_partition
