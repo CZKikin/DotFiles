@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#Tried on virtual box, no physical hardware
 #This is my script for installing arch linux, because I'm lazy 
 
 echo "Efi test"
@@ -18,12 +19,6 @@ read main
 echo "enter swap"
 read swap
 [ $efi_supp -eq 1 ] && echo "enter efi partition" && read efi_partition
-
-##DEBUGGING
-echo $efi_partition
-echo $main
-echo $swap
-##DEBUGGING
 
 mkfs.ext4 $main || { echo "mkfs.ext4 failed" ; exit 1; }
 [ $efi_supp -eq 1 ] && mkfs.vfat -F 32 $efi_partition || { echo "mkfs.vfat failed" ; exit 1; }
