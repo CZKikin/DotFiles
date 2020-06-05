@@ -25,8 +25,8 @@ mkswap $swap || { echo "makeswap failed" ; exit 1 }
 swapon $swap || { echo "swapon FAILED" ; exit 1 }
 
 mount $main /mnt || { echo "mount $main FAILED" ; exit 1 }
-mkdir /mnt/boot
-mkdir /mnt/boot/efi
+[ $efi_supp -eq 1 ] && mkdir /mnt/boot
+[ $efi_supp -eq 1 ] && mkdir /mnt/boot/efi
 [ $efi_supp -eq 1 ] && mount $efi_partition /mnt/boot/efi || { echo "mount $efi_partition /mnt/boot/efi FAILED" ; exit 1 }
 
 
@@ -57,8 +57,3 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 umount -R /mnt
 
 echo "Arch linux is installed. Reboot."
-
- 
-
-
-
