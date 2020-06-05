@@ -33,7 +33,8 @@ mkdir /mnt/boot/efi
 vim /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel linux linux-firmware vim sudo man-db man-pages dhcpcd inetutils
 
-gen fgstab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
+vim /mnt/etc/fstab
 
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
 arch-chroot /mnt hwclock --systohc
