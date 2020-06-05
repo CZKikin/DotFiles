@@ -19,15 +19,15 @@ echo "enter swap"
 read swap
 [ $efi_supp -eq 1 ] && echo "enter efi partition" && read efi_partititon
 
-mkfs.ext4 $main
-[ $efi_supp -eq 1 ] && mkfs.fat -F32 $efi_partition
-makeswap $swap
-swapon $swap
+mkfs.ext4 $main || { echo "mkfs.ext4 failed" ; exit 1 }
+[ $efi_supp -eq 1 ] && mkfs.vfat $efi_partition || { echo "mkfs.vfat failed" ; exit 1 }
+mkswap $swap || { echo "makeswap failed" ; exit 1 }
+swapon $swap || { echo "swapon FAILED" ; exit 1 }
 
-mount $main /mnt
+mount $main /mnt || { echo "mount $main FAILED" ; exit 1 }
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
-[ $efi_supp -eq 1 ] && mount $efi_partition /mnt/boot/efi
+[ $efi_supp -eq 1 ] && mount $efi_partition /mnt/boot/efi || { echo "mount $efi_partition /mnt/boot/efi FAILED" ; exit 1 }
 
 
 vim /etc/pacman.d/mirrorlist
