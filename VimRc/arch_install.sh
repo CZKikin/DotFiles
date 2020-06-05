@@ -32,6 +32,7 @@ gen fgstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
 arch-chroot /mnt hwclock --systohc
+arch-chroot /mnt vim /etc/locale.gen
 arch-chroot /mnt locale-gen
 arch-chroot /mnt pacman -S grub
 
