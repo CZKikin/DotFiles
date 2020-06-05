@@ -20,6 +20,7 @@ read swap
 [ $efi_supp -eq 1 ] && echo "enter efi partition" && read efi_partititon
 
 mkfs.ext4 $main
+[ $efi_supp -eq 1 ] && mkfs.vfat $efi_partition
 makeswap $swap
 swapon $swap
 
@@ -47,7 +48,7 @@ arch-chroot /mnt passwd
 echo "enter where to execute grub-install"
 read grub_disk
 
-[ $efi_supp -eq 1 ] && arch-chroot grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB $grub_disk || arch-chroot /mnt grub-install $grub_disk
+[ $efi_supp -eq 1 ] && mount $efi_partition /boot && arch-chroot grub-install --target=x86_64-efi --efi-directory=$grub_disk --bootloader-id=GRUB || arch-chroot /mnt grub-install $grub_disk
 
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
