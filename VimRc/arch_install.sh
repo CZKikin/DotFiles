@@ -25,6 +25,7 @@ swapon $swap
 
 mount $main /mnt
 
+vim /etc/pacman.d/mirrorlist
 pacstrap /mnt base linux linux-firmware
 
 gen fgstab -U /mnt >> /mnt/etc/fstab
