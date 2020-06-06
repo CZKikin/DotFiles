@@ -5,6 +5,7 @@
 - dwm
 - xorg-server
 - xorg-xixit
+- xorg
 - pavucontrol
 - pulseaduio
 - sudo
