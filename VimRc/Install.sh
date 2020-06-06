@@ -4,7 +4,7 @@ git clone https://github.com/CZKikin/St.git
 git clone https://git.suckless.org/dmenu
 git clone https://git.suckless.org/slock
 
-sudo pacman -S freetype2 pkg-config xorg xorg-server xorg-xinit pavucontrol pulseaudio networkmanager unclutter neomutt picom discord network-manager-applet texlive-most ranger arandr feh gcc
+sudo pacman -S freetype2 pkg-config xorg xorg-server xorg-xinit pavucontrol pulseaudio networkmanager unclutter neomutt picom discord network-manager-applet texlive-most ranger arandr feh gcc pandoc 
 
 shopt -s dotglob
 mv ~/VimRc/* ~/
