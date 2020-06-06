@@ -1,15 +1,24 @@
 #!/bin/bash
 git clone https://github.com/CZKikin/Dwm.git
 git clone https://github.com/CZKikin/St.git
-sudo pacman -S freetype2 pkg-config xorg xorg-server xorg-xinit pavucontrol pulseaudio networkmanager unclutter neomutt picom discord network-manager-applet texlive-most ranger arandr feh gcc
+git clone https://git.suckless.org/dmenu
+git clone https://git.suckless.org/slock
 
-sudo shopt -s dotglob
-sudo mv ~/VimRc/* ~/
+sudo pacman -S freetype2 pkg-config xorg xorg-server xorg-xinit pavucontrol pulseaudio networkmanager unclutter neomutt picom discord network-manager-applet texlive-most ranger arandr feh gcc pandoc net-tools
+
+shopt -s dotglob
+mv ~/VimRc/* ~/
 
 cd Dwm
 sudo make install
 
 cd ../St
+sudo make install
+
+cd ../Dmenu
+sudo make install
+
+cd ../Slock
 sudo make install
 
 echo "all"
