@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games/:/usr/games:/sbin:/usr/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games/:/usr/games:/sbin:/usr/sbin:/home/kikin/.scripts
 export VISUAL=vim
 export EDITOR="$VISUAL"
 # ~/.bashrc: executed by bash(1) for non-login shells.
