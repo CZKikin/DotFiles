@@ -7,4 +7,5 @@ exec compton&
 exec discord&
 exec xrdb ~/.Xresources&
 exec dwmblocks&
+exec min_sync&
 exec dwm

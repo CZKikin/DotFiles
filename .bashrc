@@ -37,33 +37,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-
 #One line aliases
 alias cls='clear'
 alias tracert='traceroute'
-alias ss='ls -la'
-alias qq='shutdown now'
+alias ll='ls -lah'
 alias bashrc='sudo vim ~/.bashrc'
 alias vimrc='sudo vim ~/.vimrc'
 alias ..='cd ..'
@@ -74,14 +51,6 @@ alias doup='pacman -Syu'
 alias smi='sudo make install'
 alias rr='ranger'
 alias ins='sudo pacman -S'
-
-#function aliases
-sor(){
-	ssh minirouter@$1
-	return
-}
-
-export -f sor
 
 #echo -e "----------------------------------------------------------------------------------------------\e[1;31mDistribution:"
 #cat /etc/os-release  | grep "VERSION"
