@@ -1,0 +1,6 @@
+#!/bin/sh
+while [ `date +"%S"` -ne 0 ]; do
+sleep 1
+done
+
+pkill -RTMIN+2 dwmblocks
