@@ -31,6 +31,6 @@ wget https://github.com/FortAwesome/Font-Awesome/raw/master/otfs/Font%20Awesome%
 
 tar -xvzf full-hermit-2.0.tar.gz
 
-mv *.otf ~/.fonts || { mkdir ~/.fonts ; mv *.otf ~/.fonts ;}
+mv *.otf ~/.local/share/fonts || { mkdir ~/.local/share/fonts ; mv *.otf ~/.local/share/fonts ;}
 rm -rf Hermit*; rm full-hermit*
 fc-cache -frv
