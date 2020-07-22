@@ -11,7 +11,7 @@ git clone https://git.suckless.org/dmenu
 sudo pacman -S freetype2 pkg-config xorg xorg-server xorg-xinit  pavucontrol pulseaudio networkmanager unclutter neomutt picom discord network-manager-applet texlive-most ranger arandr feh gcc pandoc net-tools xclip wget 
 
 for i in *; do
-  cd $f
+  cd $i
   sudo make install
   cd ..
 done
