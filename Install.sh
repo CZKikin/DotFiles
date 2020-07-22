@@ -33,4 +33,3 @@ tar -xvzf full-hermit-2.0.tar.gz
 mv *.otf ~/.fonts || { mkdir ~/.fonts ; mv *.otf ~/.fonts ;}
 rm -rf Hermit*; rm full-hermit*
 fc-cache -frv
-xrdb .Xresources
