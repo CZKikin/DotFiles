@@ -21,6 +21,7 @@ echo "Downloads finished... "
 
 mv ~/VimRc ~/git_repos/VimRc
 
+rm ~/.bashrc
 ln -s ~/git_repos/VimRc/.* ~/
 
 wget https://github.com/pcaro90/hermit/raw/master/packages/full-hermit-2.0.tar.gz
