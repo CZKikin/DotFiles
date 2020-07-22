@@ -21,3 +21,5 @@ echo You should install fonts that are not included. Fonts needed are: Symbola, 
 echo "Downloads finished... "
 
 mv ~/VimRc ~/git_repos/VimRc
+
+ln -s ~/git_repos/VimRc/.* ~/
