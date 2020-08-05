@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --bg-scale '/home/kikin/Pictures/wallpaperik.jpg' 
+feh --no-fehbg --bg-scale '/home/kikin/Pictures/wallpaper.png' 
