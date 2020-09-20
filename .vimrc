@@ -1,11 +1,32 @@
 let mapleader = ","
 syntax on
+
 set encoding=utf-8
+set noerrorbells
+
 set expandtab
-set tabstop=4
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+
+set smartindent
+set nowrap
+set incsearch
+
 set ignorecase
 set smartcase
+set hlsearch
 
+set ruler
+set rnu
+set nu
+
+set undodir=~/.vim/undodir
+set undofile
+set nobackup
+set nowritebackup
+set noswapfile
+
+call matchadd('ColorColumn', '\%81v', 100)
 
 "Unmap arrow keys
 no <down> <Nop>
@@ -23,10 +44,6 @@ vno <up> <Nop>
 vno <left> <Nop>
 vno <right> <Nop>
 
-"Navigaton
-set ruler
-set rnu
-
 "Mapping f3 to toggle linenums
 nmap <F3> :set nu! <CR>
 
@@ -40,21 +57,5 @@ nmap <LEADER><ESC> :noh <CR>
 abbr varemail krystofsadlik13@seznam.cz
 abbr varname Kryštof Sádlík
 
-"set highlights
-set hlsearch
-
-"Turning off backup aka swap shit
-set nobackup
-set nowritebackup
-set noswapfile
-
-
-"Python events
-
-"Bash events
-
-"Markdown events
-
-"LaTeX events
-
+colorscheme kikin
 

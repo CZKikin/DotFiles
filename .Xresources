@@ -11,19 +11,19 @@
 *.color10:      #19b700
 
 ! yellow
-*.color3:       #ffff00
-*.color11:      #dddb00
+*.color3:       #ff7a00 
+*.color11:      #ed9b50
 
 ! blue
 *.color4:       #0000ff
-*.color12:      #0026ff
+*.color12:      #0088ff
 
 ! magenta
 *.color5:       #cb1ed1
 *.color13:      #fd28ff
 
 ! cyan
-*.color6:       #0dcdcd
+*.color6:       #00cdff
 *.color14:      #14ffff
 
 ! white

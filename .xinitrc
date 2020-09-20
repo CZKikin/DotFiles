@@ -1,11 +1,11 @@
-exec feh --bg-scale /home/kikin/Pictures/wallpaper.png&
-exec udiskie&
-#exec feh --bg-fill ~/Pictures/wallpaperik.jpg ~/Pictures/another.jpg&
+exec feh --bg-scale /home/kikin/Pictures/wallpaper.jpg&
 exec picom&
-exec discord&
 exec xrdb ~/.Xresources&
+exec udiskie&
+exec discord&
+exec signal-desktop&
 exec dwmblocks&
-exec min_sync&
 exec dunst -conf ~/.config/dunst/.dunstrc&
-exex steam&
+exec steam&
+exec st -e neomutt&
 exec dwm

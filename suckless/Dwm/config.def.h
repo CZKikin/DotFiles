@@ -7,7 +7,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Minecraft:size=14","monospace:size=14", "fontawesome:size=14", "symbola:pixelsize=14" };
 static const char dmenufont[]       = "Minecraft:size=14";
-static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = 0;
 static const unsigned int borderalpha = OPAQUE;
 static char normbgcolor[]           = "#000000"; /* Background of non-selected tag */
 static char normbordercolor[]       = "#444444"; /* Border of non-active window    */
@@ -33,17 +33,20 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "Main", "Discord", "Web", "Gimp", "Steam", "IDK", "IDK", "IDK", "IDK" };
+static const char *tags[] = { "Web", "Discord", "Steam", "Signal", "Mail", "IDK", "IDK", "IDK", "IDK" };
 
 static const Rule rules[] = {
 		/* xprop(1):
 		 * 	WM_CLASS(STRING) = instance, class
-		 *	WM_NAME(STRING) = title
+		 	WM_NAME(STRING) = title
 		 */
 		/* class      instance    title       tags mask     isfloating   monitor */
 		{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
         { "discord",  NULL,       NULL,       1 << 1,       0,           -1 },
-        { "Steam",    NULL,       NULL,       1 << 4,       0,           -1 }, 
+        { "Steam",    NULL,       NULL,       1 << 2,       0,           -1 }, 
+        { "St",       NULL,  "neomutt",       1 << 4,       0,           -1 },
+        { "origin.exe", NULL,     NULL,       0,            1,           -1 },
+        { "Opera",    NULL,       NULL,       1 << 0,       0,           -1 },
 };
 
 /* layout(s) */
@@ -62,8 +65,8 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
-#define WINKEY Mod4Mask
+#define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 		{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 		{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -109,14 +112,15 @@ static Key keys[] = {
 		{ MODKEY,               60,    focusmon,       {.i = +1 } },      // period
 		{ MODKEY|ShiftMask,     59,    tagmon,         {.i = -1 } },      // comma
 		{ MODKEY|ShiftMask,     60,    tagmon,         {.i = +1 } },      // period
-		{ WINKEY,	       	    26,    spawn,	       SHCMD("st -e ranger") },  // e
-        { WINKEY,               46,    spawn,          SHCMD("slock") },  //l 
+		{ MODKEY,	       	    26,    spawn,	       SHCMD("st -e ranger") },  // e
+        { MODKEY,               46,    spawn,          SHCMD("slock") },  //l 
 		{ MODKEY,	       	    25,    spawn,          {.v = opera } },   //w
 		{ 0, 			        123,   spawn,	       SHCMD(VOLUME_UP) },//Vol +
 		{ 0,			        122,   spawn,	       SHCMD(VOLUME_DOWN) },//Vol -
-		{ WINKEY,		        60,    spawn,	       SHCMD("~/.scripts/pick_emo") },//.
+		{ MODKEY,		        60,    spawn,	       SHCMD("~/.scripts/pick_emo") },//.
         { MODKEY|ShiftMask,     40,    spawn,          SHCMD("discord") },
-        { MODKEY|ControlMask,   119,   spawn,          SHCMD("exec `echo \"shutdown now\nreboot\nsystemctl suspend\nsystemctl hibernate\" | dmenu`") }, //CTRL ALT DEL
+        { MODKEY|ShiftMask,     58,    spawn,          SHCMD("st -e neomutt") }, //m
+        { ALTKEY|ControlMask,   119,   spawn,          SHCMD("exec `echo \"shutdown now\nreboot\nsystemctl suspend\nsystemctl hibernate\" | dmenu`") }, //CTRL ALT DEL
 		TAGKEYS(                10,                    0)                 // 1
 		TAGKEYS(                11,                    1)                 // 2
 		TAGKEYS(                12,                    2)                 // 3

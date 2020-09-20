@@ -59,7 +59,7 @@ ps axo pid,cmd,state | grep Z | grep -v grep
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases || echo "Alias file read failure" 
 
 PS1="\[\e[1;31m\]["
-PS1+="\[\e[1;34m\]\u "
+[ $(id -u) -eq 0 ] && PS1+="\[\e[1;34m\]BACHA PYČO " || PS1+="\[\e[1;34m\]\u "
 PS1+="\[\e[m\]"
 PS1+="\[\e[1;32m\]\w\[\e[1;31m\]]\[\e[m\] "
 export PS1
