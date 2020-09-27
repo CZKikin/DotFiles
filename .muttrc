@@ -6,9 +6,9 @@ set smtp_url = "smtps://krystofsadlik13@smtp.seznam.cz:465"
 set from = "krystofsadlik13@seznam.cz"
 set realname = "Kryštof Sádlík"
 
-set record = "+Sent"
-set trash = "+Trash"
-set postponed = "+Drafts"
+set record = "+INBOX.Sent"
+set trash = "+INBOX.Trash"
+set postponed = "+INBOX.Drafts"
 
 set date_format="%y/%m/%d %I:%M%p"
 set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"

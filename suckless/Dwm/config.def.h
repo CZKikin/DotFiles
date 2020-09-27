@@ -113,7 +113,7 @@ static Key keys[] = {
 		{ MODKEY|ShiftMask,     59,    tagmon,         {.i = -1 } },      // comma
 		{ MODKEY|ShiftMask,     60,    tagmon,         {.i = +1 } },      // period
 		{ MODKEY,	       	    26,    spawn,	       SHCMD("st -e ranger") },  // e
-        { MODKEY,               46,    spawn,          SHCMD("slock") },  //l 
+        { MODKEY|ControlMask,   46,    spawn,          SHCMD("slock") },  //l 
 		{ MODKEY,	       	    25,    spawn,          {.v = opera } },   //w
 		{ 0, 			        123,   spawn,	       SHCMD(VOLUME_UP) },//Vol +
 		{ 0,			        122,   spawn,	       SHCMD(VOLUME_DOWN) },//Vol -
