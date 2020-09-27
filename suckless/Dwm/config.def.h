@@ -7,7 +7,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Minecraft:size=14","monospace:size=14", "fontawesome:size=14", "symbola:pixelsize=14" };
 static const char dmenufont[]       = "Minecraft:size=14";
-static const unsigned int baralpha = 0;
+static const unsigned int baralpha  = 125;
 static const unsigned int borderalpha = OPAQUE;
 static char normbgcolor[]           = "#000000"; /* Background of non-selected tag */
 static char normbordercolor[]       = "#444444"; /* Border of non-active window    */
@@ -22,7 +22,7 @@ static const char *colors[][3] = {
     [SchemeStatus]  = { normfgcolor, normbgcolor,  "#000000"  },    /* Statusbar right {text,background,not used but cannot be empty}            */
     [SchemeTagsSel]  = { selfgcolor,  selbgcolor,  "#000000"  },    /* Tagbar left selected {text,background,not used but cannot be empty}       */
     [SchemeTagsNorm]  = { normfgcolor, normbgcolor,  "#000000"  },  /* Tagbar left unselected {text,background,not used but cannot be empty}     */
-    [SchemeInfoSel]  = { selfgcolor,  selbgcolor,  "#000000"  },    /* infobar middle  selected {text,background,not used but cannot be empty}   */
+    [SchemeInfoSel]  = { selfgcolor,  selbgcolor, "#000000"  },    /* infobar middle  selected {text,background,not used but cannot be empty}   */
     [SchemeInfoNorm]  = { normfgcolor, normbgcolor,  "#000000"  },  /* infobar middle  unselected {text,background,not used but cannot be empty} */
 };
 
@@ -30,6 +30,11 @@ static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
 	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeStatus]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeTagsSel]  = { OPAQUE, baralpha, borderalpha },
+    [SchemeTagsNorm]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeInfoSel]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeInfoSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
