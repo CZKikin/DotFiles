@@ -51,6 +51,7 @@ static const Rule rules[] = {
         { "Steam",    NULL,       NULL,       1 << 2,       0,           -1 }, 
         { "St",       NULL,  "neomutt",       1 << 4,       0,           -1 },
         { "origin.exe", NULL,     NULL,       0,            1,           -1 },
+        { "Signal",   NULL,       NULL,       1 << 3,       0,           -1 },
         { "Opera",    NULL,       NULL,       1 << 0,       0,           -1 },
 };
 
