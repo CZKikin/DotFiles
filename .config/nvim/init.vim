@@ -26,8 +26,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-setlocal foldmethod=syntax
-
 call matchadd('ColorColumn', '\%81v', 100)
 
 "Unmap arrow keys
