@@ -65,3 +65,4 @@ PS1+="\[\e[m\]"
 PS1+="\[\e[1;32m\]\w\[\e[1;31m\]]\[\e[1;36m\$(__git_ps1)\[\e[m\] "
 export PS1
 xset b off
+set -o vi

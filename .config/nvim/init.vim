@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader = " "
 syntax on
 
 set encoding=utf-8
@@ -20,11 +20,13 @@ set ruler
 set rnu
 set nu
 
-set undodir=~/.vim/undodir
+set undodir=~/.config/nvim/undodir
 set undofile
 set nobackup
 set nowritebackup
 set noswapfile
+
+set foldmethod=syntax
 
 call matchadd('ColorColumn', '\%81v', 100)
 
@@ -45,17 +47,16 @@ vno <left> <Nop>
 vno <right> <Nop>
 
 "Mapping f3 to toggle linenums
-nmap <F3> :set nu! <CR>
-
-"mapping leader f3 to toggle relative linenums
-nmap <F4> :set rnu! <CR>
+nmap <F3> :set nu! rnu! <CR>
 
 "mapping leader esc to erase search highlights 
 nmap <LEADER><ESC> :noh <CR>
 
-"autocorrect
+"variables
 abbr varemail krystofsadlik13@seznam.cz
 abbr varname Kryštof Sádlík
 
 colorscheme kikin
 
+call plug#begin()
+call plug#end()
