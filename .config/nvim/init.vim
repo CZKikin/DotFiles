@@ -52,6 +52,12 @@ nmap <F3> :set nu! rnu! <CR>
 "mapping leader esc to erase search highlights 
 nmap <LEADER><ESC> :noh <CR>
 
+"leader + s = save
+nmap <LEADER>s :w<CR>
+
+"leader + m = make
+nmap <LEADER>m :make<CR>
+
 "variables
 abbr varemail krystofsadlik13@seznam.cz
 abbr varname Kryštof Sádlík

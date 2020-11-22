@@ -39,6 +39,7 @@ alias p='sudo pacman'
 alias doi='cd ~/.steam/steam/steamapps/common/dayofinfamy;./dayofinfamy_linux'
 alias bright='echo 255 > /sys/class/backlight/amdgpu_bl0/brightness'
 alias vim='nvim'
+alias ckMemLeak='valgrind --leak-check=full --show-leak-kinds=all'
 
 #Git aliases
 alias gs='git status'
