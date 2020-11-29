@@ -58,6 +58,9 @@ nmap <LEADER>s :w<CR>
 "leader + m = make
 nmap <LEADER>m :make<CR>
 
+"leader + S = save && make
+nmap <LEADER>S :w<CR> :make<CR>
+
 "variables
 abbr varemail krystofsadlik13@seznam.cz
 abbr varname Kryštof Sádlík
