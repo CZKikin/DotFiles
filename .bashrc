@@ -56,7 +56,7 @@ ps axo pid,cmd,state | grep Z | grep -v grep
 #ifconfig wlp2s0 | grep inet
 
 #Read aliases form ~/.bash_aliases
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases || echo "Alias file read failure" 
+[ -f ~/.aliases ] && source ~/.aliases || echo "Alias file read failure" 
 
 source /usr/share/git/completion/git-prompt.sh
 PS1="\[\e[1;31m\]["

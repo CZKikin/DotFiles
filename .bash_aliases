@@ -42,6 +42,7 @@ alias vim='nvim'
 alias ckMemLeak='valgrind --leak-check=full --show-leak-kinds=all'
 
 #Git aliases
+alias ga='git add'
 alias gs='git status'
 alias gc='git commit'
 alias gpo='git push origin'

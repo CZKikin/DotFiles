@@ -1,4 +1,5 @@
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+#[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f ~/.zshrc ]] && . ~/.zshrc
 
 export EDITOR="nvim"
 export TERMINAL="st"

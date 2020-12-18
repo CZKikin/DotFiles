@@ -38,7 +38,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "Web", "Discord", "Steam", "Signal", "Mail", "IDK", "IDK", "IDK", "IDK" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 		/* xprop(1):
@@ -64,10 +64,10 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 		/* symbol     arrange function */
 	 	{ "[\\]",      dwindle },/* first entry is default */
-	 	{ "[@]",      spiral },   
-		{ "[]=",      tile }, 
-		{ "><>",      NULL },    /* no layout function means floating behavior */
 		{ "[M]",      monocle },
+		{ "[]=",      tile }, 
+	 	{ "[@]",      spiral },   
+		{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -85,6 +85,7 @@ static const Layout layouts[] = {
 /* Longer commands deffinition */
 #define VOLUME_DOWN "pactl set-sink-volume 0 -5% ; pkill -RTMIN+3 dwmblocks" 
 #define VOLUME_UP "[ `pactl list sinks | awk '/\\WHlasitost/ {print $5}' | sed 's/%//g'` -lt 100 ] && { pactl set-sink-volume 0 +5% ; pkill -RTMIN+3 dwmblocks; }"
+#define SHUTDOWN_MENU "exec `echo \"shutdown now\nreboot\nsystemctl suspend\nsystemctl hibernate\" | dmenu`" 
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -94,49 +95,51 @@ static const char *opera[]  = { "opera", NULL };
 
 static Key keys[] = {
 		/* modifier             key    function        argument */
-		{ MODKEY,               33,    spawn,          {.v = dmenucmd } }, // p
-		{ MODKEY|ShiftMask,     36,    spawn,          {.v = termcmd } }, // Return
-		{ MODKEY,               56,    togglebar,      {0} },             // b
-		{ MODKEY,               44,    focusstack,     {.i = +1 } },      // j
-		{ MODKEY,               45,    focusstack,     {.i = -1 } },      // k
-		{ MODKEY,               31,    incnmaster,     {.i = +1 } },      // i
-		{ MODKEY,               40,    incnmaster,     {.i = -1 } },      // d 
-        { MODKEY,               43,    setmfact,       {.f = -0.05} },    // h
-		{ MODKEY,               46,    setmfact,       {.f = +0.05} },    // l
-		{ MODKEY,               36,    zoom,           {0} },             // Return
-		{ MODKEY,               23,    view,           {0} },             // Tab
-		{ MODKEY|ShiftMask,     24,    killclient,     {0} },             // q
-		{ MODKEY,               28,    setlayout,      {.v = &layouts[1]} }, // t
-		{ MODKEY,               41,    setlayout,      {.v = &layouts[0]} }, // f
-		{ MODKEY,               58,    setlayout,      {.v = &layouts[2]} }, // m
-		{ MODKEY,		        116,   xrdb,	       {.v = NULL } },    // F5
-		{ MODKEY,               65,    setlayout,      {0} },             // space
-		{ MODKEY|ShiftMask,     65,    togglefloating, {0} },             // space
-		{ MODKEY,               19,    view,           {.ui = ~0 } },     // 0
-		{ MODKEY|ShiftMask,     19,    tag,            {.ui = ~0 } },     // 0
-		{ MODKEY,               59,    focusmon,       {.i = -1 } },      // comma
-		{ MODKEY,               60,    focusmon,       {.i = +1 } },      // period
-		{ MODKEY|ShiftMask,     59,    tagmon,         {.i = -1 } },      // comma
-		{ MODKEY|ShiftMask,     60,    tagmon,         {.i = +1 } },      // period
-		{ MODKEY,	       	    26,    spawn,	       SHCMD("st -e ranger") },  // e
-        { MODKEY|ControlMask,   46,    spawn,          SHCMD("slock") },  //l 
-		{ MODKEY,	       	    25,    spawn,          {.v = opera } },   //w
-		{ 0, 			        123,   spawn,	       SHCMD(VOLUME_UP) },//Vol +
-		{ 0,			        122,   spawn,	       SHCMD(VOLUME_DOWN) },//Vol -
+		{ MODKEY,               33,    spawn,          {.v = dmenucmd } },            // p
+		{ MODKEY|ShiftMask,     36,    spawn,          {.v = termcmd } },             // Return
+		{ MODKEY,               56,    togglebar,      {0} },                         // b
+		{ MODKEY,               44,    focusstack,     {.i = +1 } },                  // j
+		{ MODKEY,               45,    focusstack,     {.i = -1 } },                  // k
+		{ MODKEY,               31,    incnmaster,     {.i = +1 } },                  // i
+		{ MODKEY,               40,    incnmaster,     {.i = -1 } },                  // d 
+        { MODKEY,               43,    setmfact,       {.f = -0.05} },                // h
+		{ MODKEY,               46,    setmfact,       {.f = +0.05} },                // l
+		{ MODKEY,               36,    zoom,           {0} },                         // Return
+		{ MODKEY,               23,    view,           {0} },                         // Tab
+		{ MODKEY|ShiftMask,     24,    killclient,     {0} },                         // q
+		{ MODKEY,               28,    setlayout,      {.v = &layouts[2]} },          // t
+		{ MODKEY,               41,    setlayout,      {.v = &layouts[4]} },          // f
+		{ MODKEY,               57,    setlayout,      {.v = &layouts[0]} },          // n 
+		{ MODKEY,               58,    setlayout,      {.v = &layouts[1]} },          // m
+		{ MODKEY,		        116,   xrdb,	       {.v = NULL } },                // F5
+		{ MODKEY,               65,    setlayout,      {0} },                         // space
+		{ MODKEY|ShiftMask,     65,    togglefloating, {0} },                         // space
+		{ MODKEY,               19,    view,           {.ui = ~0 } },                 // 0
+		{ MODKEY|ShiftMask,     19,    tag,            {.ui = ~0 } },                 // 0
+		{ MODKEY,               59,    focusmon,       {.i = -1 } },                  // comma
+		{ MODKEY,               60,    focusmon,       {.i = +1 } },                  // period
+		{ MODKEY|ShiftMask,     59,    tagmon,         {.i = -1 } },                  // comma
+		{ MODKEY|ShiftMask,     60,    tagmon,         {.i = +1 } },                  // period
+		{ MODKEY,	       	    26,    spawn,	       SHCMD("st -e ranger") },       // e
+        { MODKEY|ControlMask,   46,    spawn,          SHCMD("slock") },              //l 
+        { ControlMask|ShiftMask, 9,    spawn,          SHCMD("st -e htop") },               //esc
+		{ MODKEY,	       	    25,    spawn,          {.v = opera } },               //w
+		{ 0, 			        123,   spawn,	       SHCMD(VOLUME_UP) },            //Vol +
+		{ 0,			        122,   spawn,	       SHCMD(VOLUME_DOWN) },          //Vol -
 		{ MODKEY,		        60,    spawn,	       SHCMD("~/.scripts/pick_emo") },//.
-        { MODKEY|ShiftMask,     40,    spawn,          SHCMD("discord") },
-        { MODKEY|ShiftMask,     58,    spawn,          SHCMD("st -e neomutt") }, //m
-        { ALTKEY|ControlMask,   119,   spawn,          SHCMD("exec `echo \"shutdown now\nreboot\nsystemctl suspend\nsystemctl hibernate\" | dmenu`") }, //CTRL ALT DEL
-		TAGKEYS(                10,                    0)                 // 1
-		TAGKEYS(                11,                    1)                 // 2
-		TAGKEYS(                12,                    2)                 // 3
-		TAGKEYS(                13,                    3)                 // 4
-		TAGKEYS(                14,                    4)                 // 5
-		TAGKEYS(                15,                    5)                 // 6
-		TAGKEYS(                16,                    6)                 // 7
-		TAGKEYS(                17,                    7)                 // 8
-		TAGKEYS(                18,                    8)                 // 9
-		{ MODKEY|ShiftMask,     54,    quit,           {0} },             // c
+        { MODKEY|ShiftMask,     40,    spawn,          SHCMD("discord") },            //d
+        { MODKEY|ShiftMask,     58,    spawn,          SHCMD("st -e neomutt") },      //m
+        { ALTKEY|ControlMask,   119,   spawn,          SHCMD(SHUTDOWN_MENU) },        //CTRL ALT DEL
+		TAGKEYS(                10,                    0)                             // 1
+		TAGKEYS(                11,                    1)                             // 2
+		TAGKEYS(                12,                    2)                             // 3
+		TAGKEYS(                13,                    3)                             // 4
+		TAGKEYS(                14,                    4)                             // 5
+		TAGKEYS(                15,                    5)                             // 6
+		TAGKEYS(                16,                    6)                             // 7
+		TAGKEYS(                17,                    7)                             // 8
+		TAGKEYS(                18,                    8)                             // 9
+		{ MODKEY|ShiftMask,     54,    quit,           {0} },                         // c
 };
 
 /* button definitions */
