@@ -64,6 +64,9 @@ nmap <LEADER>S :w<CR> :make<CR>
 "Fix indentation for the whole file
 nmap <LEADER>f gg :%le<CR> =G
 
+"Toggle wrap
+nmap <F4> :set wrap! <CR>
+
 "variables
 abbr varemail krystofsadlik13@seznam.cz
 abbr varname Kryštof Sádlík

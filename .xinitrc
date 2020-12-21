@@ -5,7 +5,7 @@ exec udiskie&
 exec discord&
 #exec signal-desktop&
 exec dwmblocks&
-exec dunst -conf ~/.dunstrc&
+exec dunst -conf ~/.config/.dunstrc&
 #exec steam&
 #exec st -e neomutt&
 exec dwm

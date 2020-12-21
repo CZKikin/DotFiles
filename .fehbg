@@ -1,2 +1,6 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/kikin/Pictures/wps/wallpaper.png'
+while true 
+do
+    for f in /home/kikin/Pictures/wps/*; do feh --no-fehbg --bg-fill "$f"; sleep 60; done;
+done
+
