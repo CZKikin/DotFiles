@@ -1,0 +1,5 @@
+#!/bin/sh
+id=`xinput list | grep Touchpad | awk '{print $6}' | sed s/id=//g`
+[ `xinput list-props $id | grep "Device Enabled"| awk '{print $4}'` -eq 1 ] && xinput set-prop $id "Device Enabled" 0 || xinput set-prop $id "Device Enabled" 1
+
+

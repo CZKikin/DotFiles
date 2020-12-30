@@ -20,4 +20,3 @@ PROMPT='%F{red}[%(?.%F{green}√.%F{red}%?)%f %B%F{green}%1~%F{red}%b]%f '
 source ~/.aliases 
 source /usr/share/git/completion/git-prompt.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-xset b off

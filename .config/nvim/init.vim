@@ -65,13 +65,14 @@ nmap <LEADER>S :w<CR> :make<CR>
 nmap <LEADER>f gg :%le<CR> =G
 
 "Toggle wrap
-nmap <F4> :set wrap! <CR>
+nmap <F4> :set wrap!<CR>
 
 "variables
 abbr varemail krystofsadlik13@seznam.cz
 abbr varname Kryštof Sádlík
 
 colorscheme kikin
+source ~/.config/nvim/myPlugs/oprava.vim
 
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 call plug#end()
