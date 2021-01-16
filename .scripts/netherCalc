@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+
+import sys
+
+if len(sys.argv) < 3 and len(sys.argv) != 2:
+    sys.exit("Usage: ./netherCalc X Z n")
+
+if sys.argv[-1] == "n":
+    print(f"x:{int(sys.argv[1])*8} z:{int(sys.argv[2])*8} ")
+else:
+    print(f"x:{int(sys.argv[1])/8} z:{int(sys.argv[2])/8} ")

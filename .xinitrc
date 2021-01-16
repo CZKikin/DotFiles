@@ -1,6 +1,6 @@
 xset b off
 exec ~/.fehbg&
-exec picom --experimental-backends&
+exec picom&
 exec xrdb ~/.Xresources&
 exec udiskie&
 exec discord&

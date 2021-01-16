@@ -1,28 +1,4 @@
 #!/bin/sh
-ping google.com -c 4 || echo "No internet connection" ;exit 1
-sudo pacman -S freetype2 pkg-config xorg xorg-server xorg-xinit  pavucontrol pulseaudio networkmanager unclutter neomutt picom discord network-manager-applet texlive-most ranger arandr feh gcc pandoc net-tools xclip wget 
-echo "Downloads finished. Downloading Suckless utilities"
-
-cd gitRepos  || { mkdir gitRepos  ; cd gitRepos  ;}
-git clone https://github.com/CZKikin/mySuckless.git
-
-cd mySuckless
-
-echo "Installing Suckless utilities"
-for i in *; do
-  cd $i
-  sudo make install
-  cd ..
-done
-
-echo "Installed. Moving repo to gitRepos"
-mv ~/DotFiles ~/gitRepos/DotFiles
-
-rm ~/.bashrc
-cd ~/
-
-for f in .*; do [ "$f" = ".config" ] || [ "$f" = ".git" ] || ln -s ~/gitRepos/DotFiles/$f; done
- 
 echo "Downloading fonts"
 wget https://github.com/pcaro90/hermit/raw/master/packages/full-hermit-2.0.tar.gz
 wget https://github.com/FortAwesome/Font-Awesome/raw/master/otfs/Font%20Awesome%205%20Free-Regular-400.otf
