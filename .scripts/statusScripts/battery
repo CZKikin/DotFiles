@@ -1,0 +1,14 @@
+#!/bin/sh
+
+[ `cat /sys/class/power_supply/BAT0/capacity` -lt 10 ] && notify-send "A doprdele" "BATERKA DEBILE"
+percentage=$(awk '{print $1"%"}' /sys/class/power_supply/BAT0/capacity)
+status=$(cat "/sys/class/power_supply/BAT0/status")
+case "$status" in
+    "Full") status="FULL";;
+    "Discharging") status="DIS";;
+    "Charging") status="CH";;
+    "Not charging") status="NCH";;
+    "Unknown") status="IDK";;
+esac
+echo " BAT $percentage $status"
+

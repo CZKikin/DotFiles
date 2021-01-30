@@ -1,0 +1,2 @@
+#!/bin/sh
+free -h | awk '/^Mem/ { print " MEM "$3"/"$7"/"$2 }' | sed s/i//g
