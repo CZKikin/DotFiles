@@ -27,6 +27,7 @@ set nowritebackup
 set noswapfile
 
 set foldmethod=syntax
+set foldlevelstart=99
 
 call matchadd('ColorColumn', '\%81v', 100)
 

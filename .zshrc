@@ -16,7 +16,10 @@ SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games/:/usr/games:/sbin:/usr/sbin:/home/kikin/.scripts
 
-PROMPT='%F{red}[%(?.%F{green}√.%F{red}%?)%f %B%F{green}%1~%F{red}%b]%f ' 
 source ~/.aliases 
 source /usr/share/git/completion/git-prompt.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+setopt prompt_subst
+PROMPT='%F{red}[%(?.%F{green}√.%F{red}%?)%f %B%F{green}%1~%F{red}%b]%f%F{cyan}$(__git_ps1)%f ' 
+

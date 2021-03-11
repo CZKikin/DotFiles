@@ -7,7 +7,8 @@ exec discord&
 exec signal-desktop&
 exec dwmblocks&
 exec dunst -conf ~/.config/.dunstrc&
-#exec steam&
-#exec st -e neomutt&
+exec steam&
+exec thunderbird& 
+exec opera&
 exec dwm
 #exec spectrwm

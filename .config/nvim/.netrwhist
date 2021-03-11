@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/usr/share/git'
 let g:netrw_dirhist_3='/home/kikin/gitRepos/vutPointsChecker'
 let g:netrw_dirhist_2='/home/kikin/gitRepos'
 let g:netrw_dirhist_1='/home/kikin/gitRepos/vutPointsChecker'
