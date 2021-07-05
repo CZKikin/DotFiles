@@ -5,10 +5,10 @@ status=$(cat "/sys/class/power_supply/BAT0/status")
 case "$status" in
     "Full") status="FULL";;
     "Discharging") status="DIS";;
-    "Charging") status="CH";;
+    "Charging") status="⚡";;
     "Not charging") status="NCH";;
     "Unknown") status="IDK";;
 esac
 [ `cat /sys/class/power_supply/BAT0/capacity` -lt 10 ] && [ "$status" != CH ] && notify-send "A doprdele" "BATERKA DEBILE"
-echo " BAT $percentage $status"
+echo " 🔋 $percentage $status"
 
